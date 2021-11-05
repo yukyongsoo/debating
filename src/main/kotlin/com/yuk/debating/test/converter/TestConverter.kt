@@ -1,13 +1,13 @@
 package com.yuk.debating.test.converter
 
-import com.yuk.debating.test.domain.Test
 import com.yuk.debating.test.inbound.TestResponse
 import com.yuk.debating.test.outbound.TestEntity
 import org.mapstruct.Mapper
 
 @Mapper(componentModel = "spring")
+@JvmDefaultWithoutCompatibility
 interface TestConverter {
-    fun toEntity(test: Test): TestEntity
-    fun toTest(testEntity: TestEntity): Test
-    fun toResponse(testEntity: TestEntity): TestResponse
+    fun toResponse(test: TestEntity): TestResponse {
+        return TestResponse(test.id, test.testColumn)
+    }
 }

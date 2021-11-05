@@ -2,10 +2,7 @@ package com.yuk.debating.test.inbound
 
 import com.yuk.debating.test.service.TestReadService
 import com.yuk.debating.test.service.TestWriteService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/test")
@@ -21,5 +18,15 @@ class TestController(
     @PostMapping
     fun add() {
         testWriteService.write()
+    }
+
+    @PutMapping
+    fun update() {
+        testWriteService.update(1, "bbb")
+    }
+
+    @DeleteMapping
+    fun delete() {
+        testWriteService.delete()
     }
 }

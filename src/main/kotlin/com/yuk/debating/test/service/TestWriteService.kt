@@ -2,6 +2,7 @@ package com.yuk.debating.test.service
 
 import com.yuk.debating.test.converter.TestConverter
 import com.yuk.debating.test.domain.Test
+import com.yuk.debating.test.outbound.TestEntity
 import com.yuk.debating.test.outbound.TestRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -14,20 +15,17 @@ class TestWriteService(
         private val testConverter: TestConverter
 ) {
     fun write() {
-        val test = Test("aaa")
-        val entity = testConverter.toEntity(test)
-        testRepository.save(entity)
+        val test = TestEntity("aaa")
+        testRepository.save(test)
     }
 
-    fun update() {
-        val entity = testRepository.findByIdOrNull(1) ?: throw Exception()
-        val test = testConverter.toTest(entity)
+    fun update(id: Int, column: String) {
+        val test = testRepository.findByIdOrNull(1) ?: throw RuntimeException()
         test.updateColumn()
-        entity.updateColumn()
     }
 
     fun delete() {
-        val entity = testRepository.findByIdOrNull(1) ?: throw Exception()
+        val entity = testRepository.findByIdOrNull(1) ?: throw RuntimeException()
         testRepository.delete(entity)
     }
 }

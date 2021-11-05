@@ -2,21 +2,21 @@ package com.yuk.debating.test.domain
 
 import com.yuk.debating.Default
 
-class Test private constructor() {
-    @Default
+abstract class Test protected constructor() {
     constructor(testColumn: String) : this() {
         this.testColumn = testColumn
     }
 
-    constructor(id: String, testColumn: String) : this() {
+    constructor(id: Long, testColumn: String) : this() {
+        this.id = id
         this.testColumn = testColumn
     }
 
-    var id: Long = 0
-        private set
+    abstract var testColumn: String
+        protected set
 
-    var testColumn: String = ""
-        private set
+    abstract var id: Long
+        protected set
 
     fun updateColumn() {
         testColumn = "bbbb"

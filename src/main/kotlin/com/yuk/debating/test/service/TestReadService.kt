@@ -14,9 +14,9 @@ class TestReadService(
         private val testConverter: TestConverter
 ) {
     fun read(): TestResponse {
-        val entity = testRepository.findByIdOrNull(1)
-            ?: throw Exception()
+        val test = testRepository.findByIdOrNull(1)
+            ?: throw RuntimeException()
 
-        return testConverter.toResponse(entity)
+        return testConverter.toResponse(test)
     }
 }
