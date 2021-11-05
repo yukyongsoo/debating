@@ -1,11 +1,11 @@
-package com.yuk.debating.test.infra
+package com.yuk.debating.test.outbound
 
 import javax.persistence.*
 
 @Entity
 @Table(name = "test")
 class TestEntity(
-    testInput: String
+    testColumn: String
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,10 @@ class TestEntity(
         protected set
 
     init {
-        this.testColumn = testInput
+        this.testColumn = testColumn
+    }
+
+    fun updateColumn() {
+        this.testColumn = "bbb"
     }
 }

@@ -1,3 +1,5 @@
 package com.yuk.debating
 
-annotation class Default()
+@Target(AnnotationTarget.CONSTRUCTOR)
+@Retention(AnnotationRetention.SOURCE)
+annotation class Default
