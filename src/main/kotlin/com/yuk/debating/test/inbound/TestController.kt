@@ -11,8 +11,8 @@ class TestController(
     private val testReadService: TestReadService
 ) {
     @GetMapping
-    fun get() {
-        testReadService.read()
+    fun get(): TestResponse {
+        return testReadService.read()
     }
 
     @PostMapping
