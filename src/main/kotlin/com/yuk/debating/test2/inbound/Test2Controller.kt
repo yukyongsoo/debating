@@ -1,9 +1,7 @@
 package com.yuk.debating.test2.inbound
 
 import com.yuk.debating.test2.service.Test2Service
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 
 @RestController
@@ -14,5 +12,20 @@ class Test2Controller(
     @GetMapping
     fun get(): Test2Response {
         return test2Service.get()
+    }
+
+    @PostMapping
+    fun create() {
+        test2Service.create()
+    }
+
+    @PutMapping
+    fun update() {
+        test2Service.update()
+    }
+
+    @DeleteMapping
+    fun delete() {
+        test2Service.delete()
     }
 }

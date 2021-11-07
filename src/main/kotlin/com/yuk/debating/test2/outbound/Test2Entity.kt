@@ -1,11 +1,7 @@
 package com.yuk.debating.test2.outbound
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
+import com.yuk.debating.test.outbound.TestEntity
+import javax.persistence.*
 
 @Entity
 @Table(name = "test2")
@@ -19,6 +15,10 @@ class Test2Entity(
     @Column(name = "test")
     var testColumn: String = ""
         protected set
+
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name= "test_id")
+    lateinit var testEntity: TestEntity
 
     init {
         this.testColumn = testColumn
