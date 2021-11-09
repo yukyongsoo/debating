@@ -11,7 +11,6 @@ import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.FilterType
 import org.springframework.test.web.reactive.server.WebTestClient
-import reactor.test.StepVerifier
 
 @WebFluxTest(TestController::class, excludeFilters = [
     ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = [WebConfig::class])
