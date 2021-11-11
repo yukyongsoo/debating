@@ -16,7 +16,7 @@ class Test2Entity(
     var testColumn: String = ""
         protected set
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(optional = false)
     @JoinColumn(name= "test_id")
     lateinit var testEntity: TestEntity
 

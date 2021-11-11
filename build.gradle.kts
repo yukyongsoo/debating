@@ -51,6 +51,9 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.testcontainers:testcontainers:1.16.2")
     testImplementation("org.testcontainers:junit-jupiter:1.16.2")
+    testImplementation("org.testcontainers:mysql:1.16.2")
+
+    testRuntimeOnly("mysql:mysql-connector-java")
 }
 
 tasks.withType<KotlinCompile> {
