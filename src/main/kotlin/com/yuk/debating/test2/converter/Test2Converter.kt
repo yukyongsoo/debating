@@ -10,6 +10,5 @@ import org.mapstruct.ReportingPolicy
 interface Test2Converter {
     fun toTest(test2Entity: Test2Entity): Test2
 
-    @Mapping(target = "testEntity", ignore = true)
     fun toEntity(test2: Test2): Test2Entity
 }

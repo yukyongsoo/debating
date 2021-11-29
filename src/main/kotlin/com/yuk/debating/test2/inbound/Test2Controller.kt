@@ -2,6 +2,7 @@ package com.yuk.debating.test2.inbound
 
 import com.yuk.debating.test2.service.Test2Service
 import org.springframework.web.bind.annotation.*
+import reactor.core.publisher.Mono
 
 
 @RestController
@@ -10,7 +11,7 @@ class Test2Controller(
     private val test2Service: Test2Service
 ) {
     @GetMapping
-    fun get(): Test2Response {
+    fun get(): Mono<Test2Response> {
         return test2Service.get()
     }
 
