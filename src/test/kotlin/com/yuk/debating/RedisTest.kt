@@ -3,7 +3,7 @@ package com.yuk.debating
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.data.redis.core.StringRedisTemplate
+// import org.springframework.data.redis.core.StringRedisTemplate
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.testcontainers.containers.GenericContainer
@@ -15,8 +15,8 @@ import org.testcontainers.utility.DockerImageName
 @Testcontainers
 @SpringBootTest
 class RedisTest {
-    @Autowired
-    lateinit var redisTemplate: StringRedisTemplate
+   /* @Autowired
+    lateinit var redisTemplate: StringRedisTemplate*/
 
     companion object {
         @Container
@@ -37,11 +37,11 @@ class RedisTest {
 
     @Test
     fun test() {
-        redisTemplate.opsForValue().set("asdf","asdfasdf")
+       // redisTemplate.opsForValue().set("asdf","asdfasdf")
     }
 
     @Test
     fun test2() {
-        redisTemplate.opsForValue().set("asdf","asdfasdf")
+       // redisTemplate.opsForValue().set("asdf","asdfasdf")
     }
 }
