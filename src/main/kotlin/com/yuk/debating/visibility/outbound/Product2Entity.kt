@@ -1,8 +1,7 @@
-package com.yuk.debating.state.outbound
+package com.yuk.debating.visibility.outbound
 
 import com.yuk.debating.state.domain.State
 import javax.persistence.Column
-import javax.persistence.Convert
 import javax.persistence.Entity
 import javax.persistence.Enumerated
 import javax.persistence.GeneratedValue
@@ -11,8 +10,8 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "product")
-class ProductEntity(
+@Table(name = "product2")
+class Product2Entity(
     state: State
 ) {
     @Id
