@@ -1,5 +1,6 @@
 package com.yuk.debating.non.outbound
 
+import com.yuk.debating.inheritence.outbound.TestEntity
 import javax.persistence.*
 
 @Entity

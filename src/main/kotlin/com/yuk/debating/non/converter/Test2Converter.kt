@@ -5,7 +5,7 @@ import com.yuk.debating.non.outbound.Test2Entity
 import org.mapstruct.Mapper
 import org.mapstruct.ReportingPolicy
 
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 interface Test2Converter {
     fun toTest(test2Entity: Test2Entity): Test2
 
